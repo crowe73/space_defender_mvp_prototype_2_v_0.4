@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://begdq823ktvtb"]
+
+[ext_resource type="Texture2D" uid="uid://b32o1a18jjy05" path="res://Sprites/Background/Stars_far_1024x768.png" id="1_6n2lk"]
+[ext_resource type="Script" uid="uid://cxp7andphsrxk" path="res://Scripts/stars.gd" id="2_4oueq"]
+[ext_resource type="Texture2D" uid="uid://cb7r3m8bw7bkf" path="res://Sprites/Background/Stars_close_1024x768.png" id="3_e6e6o"]
+
+[node name="stars" type="Node2D"]
+
+[node name="stars_far" type="Node2D" parent="."]
+
+[node name="stars_far_0" type="Sprite2D" parent="stars_far"]
+position = Vector2(0, -768)
+texture = ExtResource("1_6n2lk")
+centered = false
+script = ExtResource("2_4oueq")
+velocity = Vector2(0, 75)
+
+[node name="stars_far_1" type="Sprite2D" parent="stars_far"]
+texture = ExtResource("1_6n2lk")
+centered = false
+script = ExtResource("2_4oueq")
+velocity = Vector2(0, 75)
+
+[node name="stars_close" type="Node2D" parent="."]
+z_index = 10
+
+[node name="stars_close_0" type="Sprite2D" parent="stars_close"]
+position = Vector2(0, -768)
+texture = ExtResource("3_e6e6o")
+centered = false
+script = ExtResource("2_4oueq")
+velocity = Vector2(0, 150)
+
+[node name="stars_close_1" type="Sprite2D" parent="stars_close"]
+texture = ExtResource("3_e6e6o")
+centered = false
+script = ExtResource("2_4oueq")
+velocity = Vector2(0, 150)
