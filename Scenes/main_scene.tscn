@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://digii2oyle37p"]
 
-[ext_resource type="PackedScene" uid="uid://begdq823ktvtb" path="res://Game_Objects/stars.tscn" id="1_52fb6"]
+[ext_resource type="PackedScene" uid="uid://begdq823ktvtb" path="res://Game_Objects/Background/stars.tscn" id="1_52fb6"]
 
 [node name="Main_Scene" type="Node2D"]
 
