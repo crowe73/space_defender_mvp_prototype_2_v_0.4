@@ -11,8 +11,15 @@ config_version=5
 [application]
 
 config/name="Space_Defender_MVP_Prototype_2_V_0.4"
+run/main_scene="uid://digii2oyle37p"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=768
+window/stretch/mode="viewport"
 
 [rendering]
 
