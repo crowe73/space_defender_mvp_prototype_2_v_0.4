@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://uwc6t3nc4vg4"]
+[gd_scene load_steps=3 format=3 uid="uid://uwc6t3nc4vg4"]
 
+[ext_resource type="Script" uid="uid://bej7c4j2esabp" path="res://Scripts/player.gd" id="1_ae3x3"]
 [ext_resource type="Texture2D" uid="uid://drwivxrfos4um" path="res://Sprites/Player/Player_Ship_2_CR_Persp.png" id="1_qp5n4"]
 
 [node name="Player" type="Area2D"]
+script = ExtResource("1_ae3x3")
+move_speed = 500.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.09, 0.09)
