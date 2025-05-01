@@ -1,10 +1,12 @@
 extends Area2D
 
+var preload_player_laser := preload("res://Game_Objects/Player/player_laser.tscn")
+
 @export var move_speed: float = 100  # Speed player moves at.
 var velocity := Vector2(0, 0)
 
 func _process(_delta):
-	pass
+	shoot()
 	
 func _physics_process(delta):
 	move_player(delta)
@@ -28,3 +30,10 @@ func constrain_player():
 	# Constrains the player to within the viewport screen.
 	var viewRect = get_viewport_rect()
 	position.x = clamp(position.x, 0 + 40, viewRect.size.x - 40)
+
+func shoot():
+	# Check if player is shooting.
+	if Input.is_action_pressed("shoot"):
+		var laser := preload_player_laser.instantiate()
+		laser.position = position
+		get_tree().current_scene.add_child(laser)
