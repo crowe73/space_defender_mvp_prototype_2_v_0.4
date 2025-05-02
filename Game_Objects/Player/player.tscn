@@ -15,3 +15,11 @@ texture = ExtResource("1_qp5n4")
 position = Vector2(-46.5, -34.5)
 scale = Vector2(0.09, 0.09)
 polygon = PackedVector2Array(517, 12, 529, 20, 541, 70, 560, 166, 564, 210, 625, 387, 675, 443, 689, 420, 747, 421, 759, 436, 766, 535, 931, 638, 933, 674, 765, 626, 751, 697, 697, 696, 675, 632, 646, 631, 655, 673, 637, 691, 598, 692, 569, 671, 558, 673, 573, 722, 554, 756, 498, 760, 463, 737, 474, 671, 464, 668, 457, 686, 396, 689, 383, 672, 390, 634, 357, 633, 345, 697, 285, 698, 267, 630, 102, 677, 98, 637, 270, 540, 270, 439, 283, 420, 345, 419, 356, 437, 407, 389, 474, 210, 493, 68, 505, 19)
+
+[node name="Default_Firing_Positions" type="Node2D" parent="."]
+
+[node name="Inner_Left" type="Node2D" parent="Default_Firing_Positions"]
+position = Vector2(-5, -54)
+
+[node name="Inner_Right" type="Node2D" parent="Default_Firing_Positions"]
+position = Vector2(5, -54)

@@ -1,6 +1,9 @@
+# Script: player.gd
 extends Area2D
 
 var preload_player_laser := preload("res://Game_Objects/Player/player_laser.tscn")
+
+@onready var default_firing_positions := $Default_Firing_Positions
 
 @export var move_speed: float = 100  # Speed player moves at.
 var velocity := Vector2(0, 0)
@@ -34,6 +37,8 @@ func constrain_player():
 func shoot():
 	# Check if player is shooting.
 	if Input.is_action_pressed("shoot"):
-		var laser := preload_player_laser.instantiate()
-		laser.position = position
-		get_tree().current_scene.add_child(laser)
+		# Deffault
+		for child in default_firing_positions.get_children():
+			var laser := preload_player_laser.instantiate()
+			laser.global_position = child.global_position
+			get_tree().current_scene.add_child(laser)
