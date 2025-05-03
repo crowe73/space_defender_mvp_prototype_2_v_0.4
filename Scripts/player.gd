@@ -4,8 +4,10 @@ extends Area2D
 var preload_player_laser := preload("res://Game_Objects/Player/player_laser.tscn")
 
 @onready var default_firing_positions := $Default_Firing_Positions
+@onready var fire_delay_timer := $Fire_Delay_Timer
 
-@export var move_speed: float = 100  # Speed player moves at.
+@export var move_speed: float = 0  # Speed player moves at.
+@export var fire_delay: float = 0  # Rate lasers fire at.
 var velocity := Vector2(0, 0)
 
 func _process(_delta):
@@ -36,7 +38,8 @@ func constrain_player():
 
 func shoot():
 	# Check if player is shooting.
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") and fire_delay_timer.is_stopped():
+		fire_delay_timer.start(fire_delay)
 		# Deffault
 		for child in default_firing_positions.get_children():
 			var laser := preload_player_laser.instantiate()

@@ -6,6 +6,7 @@
 [node name="Player" type="Area2D"]
 script = ExtResource("1_ae3x3")
 move_speed = 500.0
+fire_delay = 0.15
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.09, 0.09)
@@ -23,3 +24,6 @@ position = Vector2(-5, -54)
 
 [node name="Inner_Right" type="Node2D" parent="Default_Firing_Positions"]
 position = Vector2(5, -54)
+
+[node name="Fire_Delay_Timer" type="Timer" parent="."]
+one_shot = true
