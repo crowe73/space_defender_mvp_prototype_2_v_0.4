@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://digii2oyle37p"]
+[gd_scene load_steps=4 format=3 uid="uid://digii2oyle37p"]
 
 [ext_resource type="PackedScene" uid="uid://begdq823ktvtb" path="res://Game_Objects/Background/stars.tscn" id="1_52fb6"]
 [ext_resource type="PackedScene" uid="uid://uwc6t3nc4vg4" path="res://Game_Objects/Player/player.tscn" id="2_6l7je"]
+[ext_resource type="PackedScene" uid="uid://d2fyrav18n5rx" path="res://Game_Objects/Meteor/meteor.tscn" id="3_jv6wh"]
 
 [node name="Main_Scene" type="Node2D"]
 
@@ -9,3 +10,7 @@
 
 [node name="Player" parent="." instance=ExtResource("2_6l7je")]
 position = Vector2(512, 659)
+
+[node name="Meteor" parent="." instance=ExtResource("3_jv6wh")]
+position = Vector2(548, -1)
+max_speed = 100.0

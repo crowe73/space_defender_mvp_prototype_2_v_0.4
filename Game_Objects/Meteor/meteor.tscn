@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2fyrav18n5rx"]
+
+[ext_resource type="Script" uid="uid://dl4b54f2psa3v" path="res://Scripts/meteor.gd" id="1_rg3wq"]
+[ext_resource type="Texture2D" uid="uid://dll7k58o4omp5" path="res://Sprites/Meteor/Meteor_big_CR_Persp.png" id="1_svxog"]
+
+[node name="Meteor" type="Area2D"]
+script = ExtResource("1_rg3wq")
+min_speed = 50.0
+max_speed = 80.0
+min_rotation_rate = -50.0
+max_rotation_rate = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_svxog")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(33, -200, 69, -180, 90, -120, 149, -80, 175, 158, 171, 173, 32, 204, -21, 196, -89, 200, -153, 142, -172, 102, -126, 9, -124, -38, -100, -104, -23, -182)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.499999, -6.4373e-06)
+scale = Vector2(4.35, 5)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
