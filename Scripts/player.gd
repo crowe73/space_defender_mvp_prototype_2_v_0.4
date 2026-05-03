@@ -1,5 +1,6 @@
 # Script: player.gd
 extends Area2D
+class_name Player
 
 var preload_player_laser := preload("res://Game_Objects/Player/player_laser.tscn")
 
@@ -8,6 +9,7 @@ var preload_player_laser := preload("res://Game_Objects/Player/player_laser.tscn
 
 @export var move_speed: float = 0  # Speed player moves at.
 @export var fire_delay: float = 0  # Rate lasers fire at.
+@export var hit_points: int = 1    # Player's hit points.
 var velocity := Vector2(0, 0)
 
 func _process(_delta):
@@ -45,3 +47,11 @@ func shoot():
 			var laser := preload_player_laser.instantiate()
 			laser.global_position = child.global_position
 			get_tree().current_scene.add_child(laser)
+
+func player_damage(amount: int):
+	# Player death.
+	hit_points -= amount
+	print("Player Life = %s" % hit_points)
+	if hit_points <= 0:
+		print("Player Died")
+		queue_free()

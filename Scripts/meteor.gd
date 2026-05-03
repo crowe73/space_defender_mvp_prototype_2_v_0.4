@@ -31,3 +31,7 @@ func meteor_damage(amount: int):
 	hit_points -= amount
 	if hit_points <= 0:
 		queue_free()
+
+func _on_Meteor_area_entered(area: Area2D) -> void:
+	if area is Player:
+		area.player_damage(1)
