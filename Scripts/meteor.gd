@@ -1,6 +1,8 @@
 # Script: meteor.gd.
 extends Area2D
 
+var preload_meteor_effect            = preload("res://Game_Objects/Meteor/meteor_effect.tscn")
+
 @export var min_speed: float         = 0.0  # Minimum meteor speed.
 @export var max_speed: float         = 0.0  # maximum meteor speed.
 @export var min_rotation_rate: float = 0.0  # minimum rotation rate.
@@ -30,8 +32,14 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 func meteor_damage(amount: int):
 	hit_points -= amount
 	if hit_points <= 0:
+		play_meteor_effect()
 		queue_free()
 
 func _on_Meteor_area_entered(area: Area2D) -> void:
 	if area is Player:
 		area.player_damage(1)
+		
+func play_meteor_effect():
+	var effect = preload_meteor_effect.instantiate()
+	effect.position = position
+	get_parent().add_child(effect)
